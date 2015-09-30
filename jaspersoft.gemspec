@@ -5,7 +5,7 @@ require 'jaspersoft/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "jaspersoft"
-  spec.version       = Jaspersoft::VERSION
+  spec.version       = '0.0.5'
   spec.authors       = ["Peter Cunningham", "Darin Richardson"]
   spec.email         = ["peter@refreshmedia.com", "darin@refreshmedia.com"]
   spec.description   = %q{Access and process Jaspersoft Reports.}
