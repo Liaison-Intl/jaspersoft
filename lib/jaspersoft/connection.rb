@@ -23,6 +23,7 @@ module Jaspersoft
       conn_opts = @connection_options || {}
       conn_opts[:builder] = @middleware if @middleware
       conn_opts[:proxy] = @proxy if @proxy
+      conn_opts[:request] = { :timeout => 300 }
       opts[:faraday] = Faraday.new(conn_opts)
 
       opts
