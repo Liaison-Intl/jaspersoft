@@ -45,9 +45,8 @@ module Jaspersoft
       Hash[ * VALID_CONFIG_KEYS.map { |key| [key, send(key)] }.flatten ]
     end
     
-    def endpoint_url(options = {})
-      options = { v2: true }.merge(options)
-      "#{ endpoint }/jasperserver#{ enterprise_server ? "-pro" : "" }/rest#{ "_v2" if options[:v2] }"
+    def endpoint_url
+      "#{ endpoint }/jasperserver/rest_v2"
     end
     
   end
