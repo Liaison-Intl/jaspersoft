@@ -1,7 +1,7 @@
 module Jaspersoft
   
   module Authentication
-    
+
     def basic_authenticated?
       !!(username && password)
     end
@@ -26,7 +26,7 @@ module Jaspersoft
     
     def authenticate_with_basic
       basic_agent = new_agent{ |http| http.basic_auth(username, password) }
-      response = basic_agent.call(:post, URI.encode("#{ endpoint_url(v2: false) }/login/".to_s), { content_type: "application/x-www-form-urlencoded", j_username: username, j_password: password })
+      response = basic_agent.call(:post, URI.encode("#{ endpoint_url }/login?j_username=#{username}&j_password=#{password}".to_s), { content_type: "application/x-www-form-urlencoded" })
 
       if response && response.status == 200 && response.headers["set-cookie"] != ""
         self.session = response.headers["set-cookie"].match(/jsessionid=(.+?);/i)[1]
