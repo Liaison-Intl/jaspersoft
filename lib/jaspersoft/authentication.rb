@@ -25,6 +25,7 @@ module Jaspersoft
     private
     
     def authenticate_with_basic
+      binding.pry
       basic_agent = new_agent{ |http| http.basic_auth(username, password) }
       response = basic_agent.call(:post, URI.encode("#{ endpoint_url(v2: false) }/login/".to_s), { content_type: "application/x-www-form-urlencoded", j_username: username, j_password: password })
 

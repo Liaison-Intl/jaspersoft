@@ -20,6 +20,7 @@ module Jaspersoft
     include Jaspersoft::Client::Resources
     
     def initialize(options = {})
+      puts "inside init.....????????????"
       merged_options = Jaspersoft.options.merge(options)
 
       Configuration::VALID_CONFIG_KEYS.each do |key|

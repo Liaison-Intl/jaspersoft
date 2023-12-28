@@ -7,6 +7,8 @@ module Jaspersoft
       # @param reports [String] A path to a report
       # @return [Array<Sawyer::Resource>] An array of input controls resources
       def input_controls(path, params = {}, options = {})
+        puts "inside inputControl"
+        binding.pry
         response = get "#{endpoint_url}/reports/#{normalize_path_slashes(path)}/inputControls/", params, options
         response.inputControl
       end
